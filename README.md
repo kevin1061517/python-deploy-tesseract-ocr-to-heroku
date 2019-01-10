@@ -63,13 +63,15 @@ Notes
   <br>the error image of ignoring the configuration of variable named TESSDATA_PREFIX
 ![](https://i.imgur.com/lIPGDWN.jpg"step3")
 
+LINEBOT Display
+====
+![](https://i.imgur.com/ZNbwTGP.jpg"LINEBOT")
 
-
-
-
-
-
-
+Reference
+====
+https://stackoverflow.com/questions/42370732/heroku-error-opening-data-file-app-vendor-tesseract-ocr-tessdata-eng-traineddat
+https://github.com/heroku/heroku-buildpack-apt
+https://medium.com/@pro_science108/configurin-tesseract-ocr-in-heroku-16-444a4c079c41
 
 
 
