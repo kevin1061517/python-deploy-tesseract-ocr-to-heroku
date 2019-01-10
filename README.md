@@ -41,6 +41,7 @@ or you can input the https://github.com/heroku/heroku-buildpack-apt by using Gra
 tesseract-ocr
 tesseract-ocr-eng
 ```
+You must create the file named as Aptfile,or the error will emerge.
 ![](https://i.imgur.com/dAfw6XC.jpg"step2")
 
 3.set a heroku config variable named TESSDATA_PREFIX. This is the path to the data downloaded by the tesseract-ocr-eng package.
@@ -52,6 +53,27 @@ heroku config:set TESSDATA_PREFIX=/app/.apt/usr/share/tesseract-ocr/tessdata
 ```
 or you can input the TESSDATA_PREFIX=/app/.apt/usr/share/tesseract-ocr/tessdata by using Graphical interface on heroku
 ![](https://i.imgur.com/SrYlCC8.jpg"step3")
+
+Notes
+====
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
