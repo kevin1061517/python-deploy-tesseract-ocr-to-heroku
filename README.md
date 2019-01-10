@@ -22,7 +22,7 @@ Focus on the path!!!->'/app/.apt/usr/bin/tesseract'
 -------
 
 step
--------
+==== 
 
 1.Add heroku-apt-buildpack into buildpacks on heroku:
 -------
@@ -30,21 +30,27 @@ You can use the command following:
 ```
 heroku buildpacks:add --index 1 https://github.com/heroku/heroku-buildpack-apt
 ```
+or you can input the https://github.com/heroku/heroku-buildpack-apt by using Graphical interface on heroku
+
 
 
 
 2.Create a file named as Aptfile in your app directory and paste the following:
 -------
-
-
-
-
+```
+tesseract-ocr
+tesseract-ocr-eng
+```
 
 3.set a heroku config variable named TESSDATA_PREFIX. This is the path to the data downloaded by the tesseract-ocr-eng package.
 -------
-
-
-
+You can use the command following:
+```
+heroku buildpacks:add --index 1 https://github.com/heroku/heroku-buildpack-apt
+```
+heroku config:set TESSDATA_PREFIX=/app/.apt/usr/share/tesseract-ocr/tessdata
+```
+or you can input the TESSDATA_PREFIX=/app/.apt/usr/share/tesseract-ocr/tessdata by using Graphical interface on heroku
 
 
 
