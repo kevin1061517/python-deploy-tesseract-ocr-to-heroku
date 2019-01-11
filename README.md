@@ -56,7 +56,9 @@ or you can input the TESSDATA_PREFIX=/app/.apt/usr/share/tesseract-ocr/tessdata 
 Notes
 ====
 
-1.I got errors when I paste the tesseract-ocr into the requirements.txt file.Because I used to add buildpack,I always need to key my  required module.But in this case,never use the requirements.txt.
+1.I got errors when I paste the tesseract-ocr into the requirements.txt.Because 
+
+* I used to add buildpack on heroku,I always need to input my required module into requirements.txt.But in this case,you never need the requirements.txt.
       
 2.You must set a heroku config variable named TESSDATA_PREFIX,and inputing the TESSDATA_PREFIX's path.
 
@@ -74,7 +76,7 @@ which tesseract
 ```
 
 ![](https://i.imgur.com/l8YbsmS.jpg "heroku bash")
-
+* focus on fourth line
 LINEBOT screenshop
 ====
 ![](https://i.imgur.com/RkQOeih.jpg"LINEBOT")
@@ -84,22 +86,5 @@ Reference
 https://stackoverflow.com/questions/42370732/heroku-error-opening-data-file-app-vendor-tesseract-ocr-tessdata-eng-traineddat
 <br>https://github.com/heroku/heroku-buildpack-apt
 <br>https://medium.com/@pro_science108/configurin-tesseract-ocr-in-heroku-16-444a4c079c41
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
