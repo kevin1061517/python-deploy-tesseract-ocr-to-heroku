@@ -17,9 +17,8 @@ image = Image.open(path)
 t = pytesseract.image_to_string(image)
 line_bot_api.reply_message(event.reply_token,TextSendMessage(text=t))
 ```
+**Focus on the path!!! -> '/app/.apt/usr/bin/tesseract'
 
-Focus on the path!!!->'/app/.apt/usr/bin/tesseract'
--------
 
 step
 ==== 
