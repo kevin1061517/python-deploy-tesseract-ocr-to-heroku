@@ -1,4 +1,4 @@
-deploy Tesseract-OCR to Heroku(Linebot)
+Deploy Tesseract-OCR to Heroku(Linebot)
 ==== 
 
 Descript
@@ -76,11 +76,95 @@ which tesseract
 ```
 
 ![](https://i.imgur.com/l8YbsmS.jpg "heroku bash")
-* focus on fourth line
+
+* Focus on fourth line
+
 LINEBOT screenshop
 ====
 ![](https://i.imgur.com/RkQOeih.jpg"LINEBOT")
 
+Code
+====
+
+```
+def template_img(path):
+            print('temp---------'+str(path))
+            buttons_template = TemplateSendMessage(
+            alt_text='news template',
+            template=ButtonsTemplate(
+                title='你傳來的是照片喔',
+                text='請選擇怎樣處理',
+                thumbnail_image_url='https://i.imgur.com/GoAYFqv.jpg',
+                actions=[
+                    PostbackTemplateAction(
+                        label='影像文字翻譯辨識',
+                        text='請稍等....',
+                        data = 'trans/{}'.format(path)
+                    ),
+                    PostbackTemplateAction(
+                        label='影像儲存至相簿',
+                        text='請稍等....',
+                        data = 'image/{}'.format(path)
+                    )
+                ]
+            )
+            )
+            return buttons_template
+@handler.add(PostbackEvent)
+def handle_postback(event):
+    temp = event.postback.data
+    s = ''
+    if temp[:5] == 'image':
+     print('------postback'+str(temp))
+     t = temp.split('/')
+     path = '/{}/{}'.format(t[2],t[3])
+     print('postback---------'+str(path))
+     img_id = 1
+     t = fb.get('/pic',None)
+     if t!=None:
+         count = 1
+         for key,value in t.items():
+            if count == len(t):#取得最後一個dict項目
+                img_id = int(value['id'])+1
+            count+=1
+     try:
+
+        client = ImgurClient(client_id, client_secret, access_token, refresh_token)
+        config = {
+            'album': album_id,
+            'name' : img_id,
+            'title': img_id,
+            'description': 'Cute kitten being cute on'
+        }
+        client.upload_from_path(path, config=config, anon=False)
+        os.remove(path)
+        line_bot_api.reply_message(event.reply_token,[TextSendMessage(text='上傳成功'),image_reply])
+     except  Exception as e:
+        t = '上傳失敗'+str(e.args)
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=t))
+    elif temp[:5] == 'trans':
+     t = temp.split('/')
+     path = '/{}/{}'.format(t[2],t[3])
+     print('postback----'+str(path)) 
+     pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
+     image = Image.open(path)
+     t = pytesseract.image_to_string(image)
+     line_bot_api.reply_message(event.reply_token,TextSendMessage(text=t))
+
+#process image
+@handler.add(MessageEvent,message=ImageMessage)
+def handle_msg_img(event):
+    message_content = line_bot_api.get_message_content(event.message.id)
+    with tempfile.NamedTemporaryFile(prefix='jpg-', delete=False) as tf:
+        for chunk in message_content.iter_content():
+            tf.write(chunk)
+        tempfile_path = tf.name
+    path = tempfile_path
+
+    buttons_template = template_img(path)
+    line_bot_api.reply_message(event.reply_token,buttons_template)
+```    
+    
 Reference
 ====
 https://stackoverflow.com/questions/42370732/heroku-error-opening-data-file-app-vendor-tesseract-ocr-tessdata-eng-traineddat
