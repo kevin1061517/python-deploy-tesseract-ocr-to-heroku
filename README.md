@@ -57,7 +57,7 @@ Notes
 ====
 
 1.I got errors when I paste the tesseract-ocr into the requirements.txt file.Because I used to add buildpack,I always need to key my  required module.But in this case,never use the requirements.txt.
-<br>
+</br>
 2.You must set a heroku config variable named TESSDATA_PREFIX,and inputing the TESSDATA_PREFIX's path.<br>the error image of ignoring the configuration of variable named TESSDATA_PREFIX
 ![](https://i.imgur.com/lIPGDWN.jpg"step3")
 
