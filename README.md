@@ -60,12 +60,12 @@ Notes
       
 2.You must set a heroku config variable named TESSDATA_PREFIX,and inputing the TESSDATA_PREFIX's path.
 
-      * the error image of ignoring the configuration of variable named TESSDATA_PREFIX
+* the error image of ignoring the configuration of variable named TESSDATA_PREFIX
       
 ![](https://i.imgur.com/lIPGDWN.jpg"variable")
 3.Most of all,how can I find the main file named tesseract on heroku.
 
-      * First I would execuate the cmd command on heroku CLI and perform certain commands in the following commands.I should step into bash in order to find the path of tesseract on heroku bash.
+* First I would execuate the cmd command on heroku CLI and perform certain commands in the following commands.I should step into bash in order to find the path of tesseract on heroku bash.
 
 ```
 heroku run bash
