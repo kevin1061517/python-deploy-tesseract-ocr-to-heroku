@@ -17,7 +17,10 @@ image = Image.open(path)
 t = pytesseract.image_to_string(image)
 line_bot_api.reply_message(event.reply_token,TextSendMessage(text=t))
 ```
-**Focus on the path!!! -> '/app/.apt/usr/bin/tesseract'
+
+**版你Focus on the path!!! -> '/app/.apt/usr/bin/tesseract'**
+
+**oop 版本可參考 [line-bot refactor use oop (design pattern)](https://github.com/twtrubiks/line-bot-oop)，此版本為 functional programming。**
 
 
 step
