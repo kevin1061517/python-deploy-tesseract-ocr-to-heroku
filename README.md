@@ -70,8 +70,8 @@ LINEBOT Display
 Reference
 ====
 https://stackoverflow.com/questions/42370732/heroku-error-opening-data-file-app-vendor-tesseract-ocr-tessdata-eng-traineddat
-https://github.com/heroku/heroku-buildpack-apt
-https://medium.com/@pro_science108/configurin-tesseract-ocr-in-heroku-16-444a4c079c41
+<br>https://github.com/heroku/heroku-buildpack-apt
+<br>https://medium.com/@pro_science108/configurin-tesseract-ocr-in-heroku-16-444a4c079c41
 
 
 
