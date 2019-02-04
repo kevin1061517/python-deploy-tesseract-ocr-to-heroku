@@ -4,7 +4,7 @@ Deploy Tesseract-OCR to Heroku(Linebot)
 Descript
 -------
 
-Because I have stuck on the this question for two days,I take some notes to remind me of deeploying the Tesseract-OCR to Heroku.First, Tesseract is an OCR sponsored by Google. It is open-source and its binaries are available for lots of platforms, Additionally, it is a popular go-to library when OCR functionalities are required in an app. Setting up Tesseract-OCR is a procedure in popular development environments such as Heroku.Most of all,the following article is the process of deploying and coding.
+Because I have stuck on the this question for two days, I take some notes to remind me of deeploying the Tesseract-OCR to Heroku. First, Tesseract is an OCR sponsored by Google. It is open-source and its binaries are available for lots of platforms, Additionally, it is a popular go-to library when OCR functionalities are required in an app. Setting up Tesseract-OCR is a procedure in popular development environments such as Heroku.Most of all, the following article is the process of deploying and coding.
 
 Python Code
 -------
@@ -40,7 +40,7 @@ or you can input the https://github.com/heroku/heroku-buildpack-apt by using Gra
 tesseract-ocr
 tesseract-ocr-eng
 ```
-You must create the file named as Aptfile,or the error will emerge.
+You must create the file named as Aptfile, or the error will emerge.
 ![](https://i.imgur.com/dAfw6XC.jpg"step2")
 
 3.set a heroku config variable named TESSDATA_PREFIX. This is the path to the data downloaded by the tesseract-ocr-eng package.
@@ -58,9 +58,9 @@ Notes
 
 1.I got errors when I paste the tesseract-ocr into the requirements.txt.Because 
 
-* I used to add buildpack on heroku,I always need to input my required module into requirements.txt.But in this case,you never need the requirements.txt.
+* I used to add buildpack on heroku, I always need to input my required module into requirements.txt. But in this case,you never need the requirements.txt.
       
-2.You must set a heroku config variable named TESSDATA_PREFIX,and inputing the TESSDATA_PREFIX's path.
+2.You must set a heroku config variable named TESSDATA_PREFIX, and inputing the TESSDATA_PREFIX's path.
 
 * the error image of ignoring the configuration of variable named TESSDATA_PREFIX
       
