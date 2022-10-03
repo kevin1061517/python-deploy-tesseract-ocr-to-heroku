@@ -48,9 +48,9 @@ You must create the file named as Aptfile, or the error will emerge.
 You can use the command following:
 
 ```
-heroku config:set TESSDATA_PREFIX=/app/.apt/usr/share/tesseract-ocr/tessdata
+heroku config:set TESSDATA_PREFIX=/app/.apt/usr/share/tesseract-ocr/4.00/tessdata
 ```
-or you can input the TESSDATA_PREFIX=/app/.apt/usr/share/tesseract-ocr/tessdata by using Graphical interface on heroku
+or you can input the TESSDATA_PREFIX=/app/.apt/usr/share/tesseract-ocr/4.00/tessdata by using Graphical interface on heroku
 ![](https://i.imgur.com/SrYlCC8.jpg"step3")
 
 Notes
